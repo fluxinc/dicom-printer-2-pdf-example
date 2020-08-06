@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE DicomPrinterConfig SYSTEM "config.dtd">
+<!--	
+	DICOM Printer 2.1 Sedia Print-to-PACS Configuration File
+	Revision 1
+
+	If you have any questions regarding this document, pleast contact
+	Flux Inc. at <info@fluxinc.ca>.  Or visit https://fluxinc.ca.
+-->
+
+<DicomPrinterConfig>
+  <General>
+    <CheckingInterval>1</CheckingInterval>
+    <SuspensionTime>1</SuspensionTime>
+    <Verbosity>25</Verbosity>
+  </General>
+  <ActionsList>
+    <ParseJobTextFile name="ParsePdfText">
+      <DcmTag tag="(10,10)">^patient.externalName: \"(.+)\"$</DcmTag>
+      <DcmTag tag="(10,20)">^patient.externalid: \"(.+)\"$</DcmTag>
+      <DcmTag tag="(8,20)" replacePattern="\3\2\1">^examination.date: "(\d{2})\.(\d{2})\.(\d{4})"$</DcmTag>
+      <DcmTag tag="(8,50)">^examination.accessionnumber: \"(.+)\"$</DcmTag>
+      <DcmTag tag="(8,1030)">^examination.description: \"(.+)\"$</DcmTag>
+      <DcmTag tag="(20,d)">^examination.studyinstanceuid: \"(.+)\"$</DcmTag>
+    </ParseJobTextFile>
+    <SetTag name="SetModality" tag="(8,60)">CT</SetTag>
+    <Store name="Store">
+      <Compression type="RLE" />
+      <ConnectionParameters>
+        <MyAeTitle>DICOM_PRINTER</MyAeTitle>
+        <PeerAeTitle>CONQUESTSRV1</PeerAeTitle>
+        <Host>localhost</Host>
+        <Port>5678</Port>
+      </ConnectionParameters>
+    </Store>
+  </ActionsList>
+  <Workflow>
+    <Perform action="ParsePdfText" />
+    <Perform action="SetModality" />
+    <Perform action="Store" />
+  </Workflow>
+</DicomPrinterConfig>
