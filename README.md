@@ -1,4 +1,5 @@
-# DICOM Printer 2 Configuration for PDF Text Extraction
+# DICOM Printer 2 Config Bundle
+### PDF Text-to-DICOM Extraction
 
 This is a configuration bundle that contains:
 
