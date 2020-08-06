@@ -75,4 +75,9 @@ Drop a PDF into `C:\ProgramData\Flux Inc\DICOM Printer 2\drop`, or wherever you 
 the drop location.  In your logs you should see indication of successful attribute extraction and then
 a storage attempt.
 
+### IMPORTANT
+
+This configuartion leaves DP2 in a very chatty state.  It's best to reduce the `Verbosity` attribute to
+something like 2 or 3 once you're happy with operation.
+
 
