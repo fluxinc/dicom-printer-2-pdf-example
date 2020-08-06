@@ -45,6 +45,10 @@ $ DICOMPrinterDropMonitorService --install
 
 You will see a bit of a wall of text, and some indication of success.
 
+Note that this process creates a *second* service in your Service Manager.  You will now see both the original
+that you previously disabled, and this newly-installed instance.  Be sure to only use the new instance when starting
+or stopping the monitor.
+
 ## Configuration
 
 The sample config.xml file in this repository defines the drop location at `C:\ProgramData\Flux Inc\DICOM Printer 2\drop`.  
@@ -71,8 +75,12 @@ AE title, and port of the destination PACS.
 
 ### Drop and Parse a PDF
 
-Drop a PDF into `C:\ProgramData\Flux Inc\DICOM Printer 2\drop`, or wherever you defined 
-the drop location.  In your logs you should see indication of successful attribute extraction and then
+1. Start the Drop Monitor service
+2. Start the DICOM Printer 2 service
+3.  Drop a PDF into `C:\ProgramData\Flux Inc\DICOM Printer 2\drop`, or wherever you defined 
+the drop location.
+
+In your logs you should see indication of successful attribute extraction and then
 a storage attempt.
 
 ### IMPORTANT
