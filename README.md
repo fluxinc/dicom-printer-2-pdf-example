@@ -20,12 +20,12 @@ Printer 2 install.
 
 ### Install the Binaries
 
-- Download and install DICOM Printer 2 from the Flux Software website at:
+- Download and install DICOM Printer 2 from the Flux Software website at:  
   https://store.fluxinc.ca/files/DP2/latest
   
   You can skip the wizard, and leave the configuration as-is.
   
-- Download and unzip the contents of the following zip to `Program Files\Flux Inc\DICOM Printer 2`
+- Download and unzip the contents of the following zip to `Program Files\Flux Inc\DICOM Printer 2`  
   https://www.fluxinc.ca/wp-content/uploads/2020/08/DICOMPrinterDropMonitorService-2020-08-05.zip
 
 - Copy `config.xml` from **this repo** to `ProgramData\Flux Inc\DICOM Printer 2\config
