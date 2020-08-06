@@ -28,7 +28,7 @@ Printer 2 install.
 - Download and unzip the contents of the following zip to `Program Files\Flux Inc\DICOM Printer 2`  
   https://www.fluxinc.ca/wp-content/uploads/2020/08/DICOMPrinterDropMonitorService-2020-08-05.zip
 
-- Copy [config.xml](https://github.com/fluxinc/dicom-printer-2-pdf-example/blob/master/config.xml) from **this repo** to `ProgramData\Flux Inc\DICOM Printer 2\config
+- Copy [config.xml](https://github.com/fluxinc/dicom-printer-2-pdf-example/blob/master/config.xml) from **this repo** to `ProgramData\Flux Inc\DICOM Printer 2\config`
 
 ### Replace Drop Monitor Service
 
